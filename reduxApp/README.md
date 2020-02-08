@@ -1,5 +1,5 @@
 # Aplicación react native redux
- ## clonar este repositorio
+## clonar este repositorio
   ```bash
     git clone 
   ```
@@ -8,7 +8,7 @@
   ```bash
     cd reduxApp 
   ```
-  ## Instalar dependencias necesarias
+## Instalar dependencias necesarias
   ```bash
    brew install node
    brew install watchman
