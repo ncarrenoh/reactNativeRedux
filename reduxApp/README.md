@@ -5,6 +5,6 @@
   ```
   
   luego entrar a la carpeta con el proyecto
-    ```bash
-      cd reactNativeRedux/reduxApp/
-    ```
+  ```bash
+    cd reduxApp 
+  ```
