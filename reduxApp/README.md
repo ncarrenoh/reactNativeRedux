@@ -1,7 +1,7 @@
 # Aplicación react native redux
 ## clonar este repositorio
   ```bash
-    git clone https://github.com/ncarrenoh/reactNativeRedux.git
+    git clone `<link>` : <https://github.com/ncarrenoh/reactNativeRedux.git>
   ```
   
   luego entrar a la carpeta con el proyecto:
