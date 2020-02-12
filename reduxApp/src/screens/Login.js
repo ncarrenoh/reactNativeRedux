@@ -21,10 +21,11 @@ class Login extends Component {
   };
 
   _handleOnPressTitle = () => {
-    const { login } = this.props;
+    const { login, fetchPosts } = this.props;
     const { placeholderUser, placeholderPassword } = this.state;
     this.setState({ title: ' ...cargando' });
     login(placeholderUser, placeholderPassword);
+    fetchPosts();
   };
 
   _handleOnChangeUserName(value) {
@@ -33,6 +34,13 @@ class Login extends Component {
 
   _handleOnChangePassword(value) {
     this.setState({ placeholderPassword: value });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { currentUser, navigation } = this.props;
+    if (prevProps.currentUser !== currentUser && currentUser) {
+      navigation.navigate('Home');
+    }
   }
 
   render() {
@@ -106,10 +114,11 @@ class Login extends Component {
 const mapDispatchToProps = dispatch => ({
   login: (username, password) =>
     dispatch(actions.user.login(username, password)),
+  fetchPosts: () => dispatch(actions.posts.fetchPosts()),
 });
 
 const mapStateToProps = state => ({
-  state: state,
+  currentUser: state.user.currentUser,
 });
 
 export default connect(

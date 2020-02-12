@@ -1,14 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from '../store';
-import AppStack from '../routes/app';
+import Navigator from '../routes/app';
 
 console.disableYellowBox = true;
 
-const App = () => (
+export default () => (
   <Provider store={store}>
-    <AppStack />
+    <Navigator />
   </Provider>
 );
-
-export default App;
