@@ -61,3 +61,5 @@ buck-out/
 package-lock.json
 yarn.lock
 README.md
+
+server

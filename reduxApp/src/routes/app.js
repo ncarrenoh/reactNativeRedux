@@ -2,12 +2,13 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { LoginScreen, SettingsScreen, HomeScreen } from '../screens';
 
-import { LoginScreen, HomeScreen, SettingsScreen } from '../screens';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createStackNavigator();
-
+console.log(LoginScreen);
 const AppStack = () => {
   return (
     <NavigationContainer>
@@ -19,19 +20,26 @@ const AppStack = () => {
   );
 };
 
-const icon = <FontAwesome5 name={'comments'} solid />;
-
 const Tab = createBottomTabNavigator();
-const tabOptions = {
-  tabBarLabel: 'Homes',
-  tabBarIcon: ({ color, size }) => icon,
+
+const tabHomeOptions = {
+  tabBarLabel: 'Home',
+  tabBarIcon: ({ color, size }) => <Icon name="home" size={size} />,
 };
+
+const tabSettingsOptions = {
+  tabBarLabel: 'Mi Perfil',
+  tabBarIcon: ({ color, size }) => <Icon name="align-justify" size={size} />,
+};
+
 const HomeTabNavigator = () => (
-  <Tab.Navigator tabBarOptions={{
-        activeTintColor: '#e91e63',
-  }}>
-    <Tab.Screen name="Home" component={HomeScreen} options={tabOptions} />
-    <Tab.Screen name="Settings" component={SettingsScreen} />
+  <Tab.Navigator tabBarOptions={{ activeTintColor: '#2fb806' }}>
+    <Tab.Screen name="Home" component={HomeScreen} options={tabHomeOptions} />
+    <Tab.Screen
+      name="Settings"
+      component={SettingsScreen}
+      options={tabSettingsOptions}
+    />
   </Tab.Navigator>
 );
 
