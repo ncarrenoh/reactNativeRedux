@@ -23,7 +23,7 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-
+.vscode
 # Android/IntelliJ
 #
 build/
