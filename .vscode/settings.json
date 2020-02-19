@@ -1,3 +1,8 @@
 {
+<<<<<<< Updated upstream
   "git.ignoreLimitWarning": true
+=======
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Consolas, 'Operator Mono', Menlo, Monaco, 'Courier New', monospace"
+>>>>>>> Stashed changes
 }
