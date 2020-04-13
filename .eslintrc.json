@@ -20,7 +20,7 @@
     "quotes": ["error", "single"],
     "object-curly-spacing": ["error", "always", { "objectsInObjects": true }],
     "max-len": [ 2, { "code": 80 } ],
-    "arrow-parens": [2, "as-needed"]
-
+    "arrow-parens": [2, "as-needed"],
+    "react/prop-types": [0]
     }
   }
