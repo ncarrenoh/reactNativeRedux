@@ -1,14 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Provider } from 'react-redux';
-import AsyncStorage from '@react-native-community/async-storage';
-import { store } from '../store';
-import Navigator from '../routes/app';
-import AuthLoading from '../screens/AuthLoading';
-import Header from './Header';
-import Footer from './Footer';
-import Post from './Post';
-import axios from 'axios';
 import { ActivityIndicator, FlatList } from 'react-native';
+import { Provider } from 'react-redux';
+import axios from 'axios';
+import Post from './src/components/Post';
+import { store } from './src/store';
+import Navigator from './src/routes/app';
+import { AuthLoading } from './src/screens';
 
 console.disableYellowBox = true;
 // export default () => {
@@ -37,11 +34,10 @@ export default () => {
     fetchUsers();
   }, []); // componentDidMount
 
-  function _renderPost({ item }) {
+  function renderPost({ item }) {
     return <Post user={item} />;
   }
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const handleOnRefresh = useCallback(() => {
     setRefreshing(true);
     setTimeout(() => fetchUsers());
@@ -52,7 +48,7 @@ export default () => {
       keyExtractor={item => item.id.value}
       initialNumToRender={4}
       data={users}
-      renderItem={_renderPost}
+      renderItem={renderPost}
       onRefresh={handleOnRefresh}
       refreshing={refreshing}
     />

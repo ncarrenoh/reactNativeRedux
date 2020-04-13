@@ -6,6 +6,7 @@ import SettingsScreen from './Settings';
 import CameraScreen from './Camera';
 import PostsScreen from './Posts';
 import RegisterScreen from './Register';
+import AuthLoading from './AuthLoading';
 
 export {
   HomeScreen,
@@ -16,4 +17,5 @@ export {
   CameraScreen,
   PostsScreen,
   RegisterScreen,
+  AuthLoading,
 };
